@@ -20,14 +20,14 @@ from scipy import stats
 
 
 
-DATA_FOLDER = Path("temp/marktplaats_listings")  # <-- Correct location of .jsonl files
-OUTPUT_FOLDER = Path("archived/maps")              # <-- Where maps should go
-OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
+DATA_FOLDER =  # <-- Correct location of .jsonl files
+OUTPUT_FOLDER =            # <-- Where maps should go
+
 
 MIN_LAT, MAX_LAT = 49.0, 55.0  # NL + BE
 MIN_LON, MAX_LON = 2.5, 8.0
 
-STATS_FILE = OUTPUT_FOLDER / "summary_stats.json"
+STATS_FILE = OUTPUT_FOLDER
 
 # ──────────────────────────────────────────────────────────────────────────────
 # ORIGINAL FUNCTIONS – *unchanged*
@@ -634,7 +634,7 @@ def main() -> None:
         stats = build_stats(all_listings, f.name)
 
         # ───── Append stats to correct brand file ─────
-        json_output_path = Path("src/lib/secondhand") / f"{brand}.json"
+        json_output_path = Path("") / f"{brand}.json"
         json_output_path.parent.mkdir(parents=True, exist_ok=True)
 
         existing_data = []
